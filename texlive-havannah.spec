@@ -1,6 +1,6 @@
 Name:		texlive-havannah
 Version:	36348
-Release:	1
+Release:	2
 Summary:	Diagrams of board positions in the games of Havannah and Hex
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/havannah
