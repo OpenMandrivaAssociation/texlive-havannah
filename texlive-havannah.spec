@@ -3,7 +3,7 @@ Version:	36348
 Release:	2
 Summary:	Diagrams of board positions in the games of Havannah and Hex
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/havannah
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/havannah
 License:	lppl1.2
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/havannah.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/havannah.doc.r%{version}.tar.xz
