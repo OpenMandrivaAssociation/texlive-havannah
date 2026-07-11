@@ -1,39 +1,21 @@
-Name:		texlive-havannah
-Version:	36348
-Release:	2
+%global tl_name havannah
+%global tl_revision 36348
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
 Summary:	Diagrams of board positions in the games of Havannah and Hex
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/havannah
 License:	lppl1.2
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/havannah.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/havannah.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/havannah.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/havannah.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/havannah.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/havannah.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package defines macros for typesetting diagrams of board
-positions in the games of Havannah and Hex.
+This package defines macros for typesetting diagrams of board positions
+in the games of Havannah and Hex.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/havannah
-%{_texmfdistdir}/tex/latex/havannah
-%doc %{_texmfdistdir}/doc/latex/havannah
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
